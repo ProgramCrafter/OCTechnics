@@ -90,7 +90,7 @@ class OCTTestCommand extends CommandBase {
                 return;
             }
             
-            FactoryTile tile_entity = casted_block.getTileEntity();
+            FactoryTile tile_entity = (FactoryTile)player.worldObj.getTileEntity(pos[0], pos[1], pos[2]);
             if (tile_entity == null) {
                 this.echo(player, "This block does not have FactoryTile.");
                 return;

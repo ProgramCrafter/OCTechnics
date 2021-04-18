@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "octechnics:block/basic_factory_block" }
+	}
+}

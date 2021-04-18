@@ -1,0 +1,7 @@
+tile.octechnics:basic_factory_block.name=Factory Base
+tile.octechnics:factory_crafting_table.name=Factory Crafting Table
+tile.octechnics:factory_furnace.name=Factory Furnace
+tile.octechnics:factory_items_storage.name=Factory Items Storage
+tile.octechnics:factory_energy_storage.name=Factory Energy Storage
+tile.octechnics:factory_items_bus.name=Factory Items Bus
+tile.octechnics:factory_controller.name=Factory Controller

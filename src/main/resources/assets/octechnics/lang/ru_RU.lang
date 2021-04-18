@@ -1,0 +1,7 @@
+tile.octechnics:basic_factory_block.name=Базовый блок завода
+tile.octechnics:factory_crafting_table.name=Верстак завода
+tile.octechnics:factory_furnace.name=Печь завода
+tile.octechnics:factory_items_storage.name=Хранилище предметов завода
+tile.octechnics:factory_energy_storage.name=Аккумулятор завода
+tile.octechnics:factory_items_bus.name=Обменник предметов завода
+tile.octechnics:factory_controller.name=Контроллер завода

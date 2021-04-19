@@ -5,7 +5,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 
-public class FactoryTile extends TileEntity {
+import cpw.mods.fml.common.Optional;
+
+import li.cil.oc.api.network.SimpleComponent;
+
+@Optional.Interface(iface = "li.cil.oc.api.network.SimpleComponent", modid = "OpenComputers")
+public class FactoryTile extends TileEntity implements SimpleComponent {
     private ItemStack[] contents;
     private String block_name;
     private int ticksSinceSync;
@@ -15,6 +20,12 @@ public class FactoryTile extends TileEntity {
         this.block_name = block_name;
         this.contents = new ItemStack[this.getSizeInventory()];
     }
+    
+    @Override
+    public String getComponentName() {
+        return this.block_name;
+    }
+    
     public int getSizeInventory() {
         if (this.block_name == "factory_items_storage") {return 9;} else {return 0;}
     }

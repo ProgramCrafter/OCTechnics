@@ -13,17 +13,21 @@ import li.cil.oc.api.network.SimpleComponent;
 public class FactoryTile extends TileEntity implements SimpleComponent {
     private ItemStack[] contents;
     private String block_name;
+    private boolean is_controller_te;
     private int ticksSinceSync;
     
-    public FactoryTile(String block_name) {
+    public FactoryTile(String block_name, boolean is_controller_te) {
         super();
         this.block_name = block_name;
+        this.is_controller_te = is_controller_te;
         this.contents = new ItemStack[this.getSizeInventory()];
+        OCTechnics.logger.info("FactoryTile for " + block_name + " - controller: " + String.valueOf(is_controller_te));
     }
     
     @Override
     public String getComponentName() {
-        return this.block_name;
+        if (this.is_controller_te) return this.block_name;
+        return null;
     }
     
     public int getSizeInventory() {

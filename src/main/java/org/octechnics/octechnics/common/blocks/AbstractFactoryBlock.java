@@ -25,12 +25,15 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class AbstractFactoryBlock extends BlockContainer {
     private String _name;
     private static boolean registeredTE = false;
-    public AbstractFactoryBlock(String name, String tx_name, Boolean is_controller) {
+    private static boolean is_controller = false;
+    
+    public AbstractFactoryBlock(String name, String tx_name, boolean is_controller) {
         super(Material.rock);
         this.setBlockName("octechnics:" + name);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setBlockTextureName("octechnics:" + tx_name);
         this._name = name;
+        this.is_controller = is_controller;
     }
     public void register() {
         GameRegistry.registerBlock(this, _name);
@@ -54,6 +57,6 @@ public class AbstractFactoryBlock extends BlockContainer {
     @Override
     public TileEntity createTileEntity(World world, int metadata) {
         OCTechnics.logger.info("*** created new tile entity, block " + this._name);
-        return new FactoryTile(this._name);
+        return new FactoryTile(this._name, this.is_controller);
     }
 }

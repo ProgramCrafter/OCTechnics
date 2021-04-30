@@ -25,7 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class AbstractFactoryBlock extends BlockContainer {
     private String _name;
     private static boolean registeredTE = false;
-    private static boolean is_controller = false;
+    private boolean is_controller = false;
     
     public AbstractFactoryBlock(String name, String tx_name, boolean is_controller) {
         super(Material.rock);
@@ -57,6 +57,6 @@ public class AbstractFactoryBlock extends BlockContainer {
     @Override
     public TileEntity createTileEntity(World world, int metadata) {
         OCTechnics.logger.info("*** created new tile entity, block " + this._name);
-        return new FactoryTile(this._name, this.is_controller);
+        return new FactoryTile(world, this._name, this.is_controller);
     }
 }

@@ -19,6 +19,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod( modid = "octechnics", version = "1.0" )
 public class OCTechnics {
+    public static Logger logger = LogManager.getLogger();
     public static AbstractFactoryBlock FACTORY_CONTROLLER  = new AbstractFactoryBlock("factory_controller", "factory_controller", true);
     public static AbstractFactoryBlock BASIC_FACTORY_BLOCK = new AbstractFactoryBlock("basic_factory_block", "factory_base", false);
     public static AbstractFactoryBlock FACTORY_CRAFT_TABLE = new AbstractFactoryBlock("factory_crafting_table", "factory_craft_table_s0", false);
@@ -26,10 +27,8 @@ public class OCTechnics {
     public static AbstractFactoryBlock FACTORY_ITEM_ST = new AbstractFactoryBlock("factory_items_storage", "factory_items_storage_s4", false);
     public static AbstractFactoryBlock FACTORY_ENRG_ST = new AbstractFactoryBlock("factory_energy_storage", "factory_energy_storage_s9", false);
     public static AbstractFactoryBlock FACTORY_ITEM_BS = new AbstractFactoryBlock("factory_items_bus", "factory_items_bus_s0", false);
-    public static Logger logger;
     
     public OCTechnics() {
-        logger = LogManager.getLogger();
         logger.info("octechnics - class instantiated");
     }
     
